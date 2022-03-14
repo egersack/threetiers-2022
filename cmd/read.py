@@ -20,3 +20,13 @@ cnx = mysql.connector.connect(user='root',
 #           YOUR CODE
 # ----------------------------------- 
 
+cursor = cnx.cursor()
+query = ('SELECT * FROM colleges')
+cursor.execute(query)
+
+#print
+for row in cursor.fetchall():
+    print(row)
+
+cursor.close()
+cnx.close()
